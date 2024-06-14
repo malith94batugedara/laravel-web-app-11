@@ -11,7 +11,7 @@ class UpdateEmployeeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,18 @@ class UpdateEmployeeRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        $rules = [
+            'empname' => [
+                'required'
+            ],
+            'empaddress' => [
+                'required'
+            ],
+            'empage' => [
+                'required'
+            ]
         ];
+
+        return $rules;
     }
 }
