@@ -6,6 +6,7 @@ use App\Models\Employee;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Models\Department;
+use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
@@ -96,8 +97,12 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employee $employee)
+    public function destroy(Employee $employee,Request $request)
     {
-        //
+        $employeeeee=$employee::findOrFail($request->employee_delete_id);
+
+        $employeeeee->delete();
+
+        return redirect(route('employee.all'))->with('status','Employee Deleted Successfully!');
     }
 }
