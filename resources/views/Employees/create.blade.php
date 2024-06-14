@@ -30,7 +30,7 @@
        <label>Employee Department</label>
        <select name="empdepart" class="form-control">
         @foreach ($departments as $department)
-            <option value="FINANCE">{{ $department->department_name }}</option>
+            <option value="{{ $department->id }}">{{ $department->department_name }}</option>
         @endforeach
        </select><br/>
 

@@ -37,7 +37,7 @@
                 <td>{{$employee->emp_age}}</td>
                 <td>{{$employee->emp_department}}</td>
                 <td>
-                    <a href="" class="btn btn-success">Edit</a>
+                    <a href="{{ route('employee.edit',$employee->id) }}" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
